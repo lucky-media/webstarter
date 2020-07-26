@@ -3,7 +3,7 @@
 return [
     'production' => false,
     'baseUrl' => '',
-    'siteName' => 'Tailwind Pages',
+    'siteName' => 'TailwindPages',
     'siteDescription' => 'Tailwind css landing pages, components and more',
     'social_media' => [
         [
