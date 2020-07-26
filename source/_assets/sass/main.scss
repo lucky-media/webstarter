@@ -3,9 +3,3 @@
 @tailwind components;
 
 @tailwind utilities;
-
-#menu-toggle:checked+#menu {
-    display: flex;
-    opacity: 1;
-    transition: all .55s ease;
-}

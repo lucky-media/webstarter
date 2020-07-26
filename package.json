@@ -9,6 +9,7 @@
         "watch": "npm run local -- --watch"
     },
     "devDependencies": {
+        "@tailwindcss/custom-forms": "^0.2.1",
         "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.2.2",
         "cross-env": "^6.0.3",
@@ -18,12 +19,11 @@
         "node-cmd": "^3.0.0",
         "sass": "^1.24.4",
         "sass-loader": "^8.0.1",
-        "tailwind-bootstrap-grid": "^2.1.0",
         "vue-template-compiler": "^2.6.11",
         "yargs": "^4.6.0"
     },
     "dependencies": {
-        "tailwindcss": "^1.4.6",
-        "vue": "^2.6.11"
+        "alpinejs": "^2.5.0",
+        "tailwindcss": "^1.4.6"
     }
 }
