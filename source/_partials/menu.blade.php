@@ -1,36 +1,42 @@
-<div x-data="{ isTop: false, isOpen: false }"
-     x-on:scroll.window.passive="isTop = (window.pageYOffset > 150) ? true : false;"
-     :class="{ 'sticky inset-0 z-50 bg-white shadow-lg': isTop, 'bg-blue-500': !isTop }"
-     class="border-b border-white border-opacity-25 transition-all slide-in-out duration-300">
-    <div class="container flex md:flex-row flex-wrap items-center justify-between py-5 md:py-0 md:flex-no-wrap">
+<div class="bg-white shadow-lg flex items-center">
+    <div class="container">
+        <div class="row py-6 justify-between">
+            <div class="col-6">
+                <p class="font-bold text-gray-800 text-2xl">Web Starter</p>
+            </div>
 
-        <a href="/"
-           :class="{ 'text-grey-900': isTop ,'text-white': !isTop }"
-           class="font-bold text-white text-xl text-left leading-none">
-            tailwind <br> pages
-        </a>
+            <div class="col-2 md:hidden block">
+                <label for="menu-toggle" class="cursor-pointer">
+                    <svg class="fill-current text-gray-800 w-8 h-8" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20">
+                        <title>menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                    </svg>
+                </label>
+            </div>
 
-        <div @click="isOpen = !isOpen" class="block md:hidden">
-            <svg class="fill-current w-8 h-8"
-                 :class="{ 'text-grey-900': isTop ,'text-white': !isTop, 'text-orange-500': isOpen }"
-                 xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 24 24">
-                <path fill-rule="evenodd" d="M20.5 3.5h-17v17h17v-17zM2 2v20h20V2H2z" clip-rule="evenodd"/>
-                <path fill-rule="evenodd" d="M17 8.5H7V7h10v1.5zM17 13h-6.667v-1.5H17V13zM17 17.5H7V16h10v1.5z"
-                      clip-rule="evenodd"/>
-            </svg>
+            <input class="hidden" type="checkbox" id="menu-toggle" />
+
+            <div id="menu" class="md:col-6 hidden md:flex justify-center md:justify-end">
+                <ul class="flex w-full p-5 flex-col md:w-auto md:p-0 md:flex-row items-center">
+                    <li class="w-full md:w-auto md:mr-6">
+                        <a href="#"
+                            class="block py-4 md:py-0 border-b border-gray-200 md:border-b-0 md:border-transparent">Home</a>
+                    </li>
+                    <li class="w-full md:w-auto md:mr-6">
+                        <a href="#"
+                            class="block py-4 md:py-0 border-b border-gray-200 md:border-b-0 md:border-transparent">About</a>
+                    </li>
+                    <li class="w-full md:w-auto md:mr-6">
+                        <a href="#"
+                            class="block py-4 md:py-0 border-b border-gray-200 md:border-b-0 md:border-transparent">Pages</a>
+                    </li>
+                    <li class="w-full md:w-auto md:mr-6">
+                        <a href="#"
+                            class="block py-4 md:py-0 border-b border-gray-200 md:border-b-0 md:border-transparent">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        <nav x-show.transition="true"
-             class="w-full flex-grow md:flex flex-col md:flex-row items-center md:flex-grow-0 md:w-auto mt-5 md:mt-0"
-             :class="{ 'md:block': isOpen, 'hidden': !isOpen }"
-             @click.away="isOpen = false">
-            @foreach($page->menu as $menu)
-                <div class="-mb-px border-b md:border-b-2 last:border-b-0 md:last:border-b-2 md:border-transparent hover:border-orange-500 hover:bg-opacity-25 transition-all ease-in-out duration-150"
-                    :class="{ 'text-grey-900 hover:bg-blue-500': isTop, 'text-white hover:bg-white': !isTop }">
-                    <a href="{{ $menu->url }}" class="block px-6 py-8">{{ $menu->title }}</a>
-                </div>
-            @endforeach
-        </nav>
     </div>
 </div>

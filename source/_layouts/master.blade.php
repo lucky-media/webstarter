@@ -17,9 +17,7 @@
 
     {{-- Styles --}}
     <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-
-    <script src="{{ mix('js/main.js', 'assets/build') }}" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" rel="stylesheet">
 
     @stack('styles')
 </head>
@@ -33,7 +31,11 @@
         @yield('body')
     </div>
 
-    @include('_partials.footer')
+    <footer>
+
+    </footer>
+
+    <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
 </body>
 
 </html>
